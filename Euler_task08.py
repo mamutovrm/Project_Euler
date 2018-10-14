@@ -26,42 +26,28 @@ int_array_string = int_array_string.replace("\n", "")
 size = len(int_array_string)
 print("size = " + str(size))
 
-j = 0
 composion = 0
-local_composion = 0
 for i in range(1, size - 4):
     local = int_array_string[i:i + 4]
     # print(local)
-    x1 = int(local[0:1])
-    x2 = int(local[1:2])
-    x3 = int(local[2:3])
-    x4 = int(local[3:4])
-    local_composion = x1 * x2 * x3 * x4
+    local_composion = 1
+    for k in range(0, 4):
+        local_composion *= int(local[k:k + 1])
     if local_composion > composion:
         composion = local_composion
-        j = i
 
-print("maximum = " + int_array_string[j:j + 4] + " composion = " + str(composion))
+print("composion = " + str(composion))
+
 
 for i in range(1, size - 13):
     local = int_array_string[i:i + 13]
-    # print(local)
-    x1 = int(local[0:1])
-    x2 = int(local[1:2])
-    x3 = int(local[2:3])
-    x4 = int(local[3:4])
-    x5 = int(local[4:5])
-    x6 = int(local[5:6])
-    x7 = int(local[6:7])
-    x8 = int(local[7:8])
-    x9 = int(local[8:9])
-    x10 = int(local[9:10])
-    x11 = int(local[10:11])
-    x12 = int(local[11:12])
-    x13 = int(local[12:13])
-    local_composion = x1 * x2 * x3 * x4 * x5 * x6 * x7 * x8 * x9 * x10 * x11 * x12 * x13
+    local_composion = 1
+    for k in range(0, 13):
+        local_composion *= int(local[k:k + 1])
     if local_composion > composion:
         composion = local_composion
         j = i
 
-print("maximum = " + int_array_string[j:j + 13] + " composion = " + str(composion))
+print("composion = " + str(composion))
+
+
